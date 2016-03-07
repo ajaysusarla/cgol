@@ -53,3 +53,8 @@ globals.o: globals.c cgol.h
 
 clean:
 	rm -f $(BIN_NAME) *.o
+
+.PHONY: check-syntax
+
+check-syntax:
+	$(CC) $(CFLAGS) -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
